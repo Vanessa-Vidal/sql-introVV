@@ -6,4 +6,7 @@
 -- | New York Mets | Pete       | Alonso    | 53        |
 -- +---------------+------------+-----------+-----------+
 
-
+SELECT teams.name, players.first_name, players.last_name, max(home_runs)
+FROM players INNER JOIN stats INNER JOIN teams
+ON players.id=stats.player_id AND stats.team_id=teams.id
+WHERE teams.year=2019;
